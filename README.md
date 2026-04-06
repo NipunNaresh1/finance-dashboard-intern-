@@ -17,7 +17,7 @@ npm run dev
 npm run build
 ```
 
-App runs at: `http://localhost:5173`
+dashboard is live on -----> "https://finance-dashboard-intern-sandy.vercel.app/"
 
 ---
 
