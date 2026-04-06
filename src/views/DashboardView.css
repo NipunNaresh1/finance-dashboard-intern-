@@ -1,0 +1,153 @@
+/* ─── DashboardView Styles ───────────────────────────────────────────────── */
+.view-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.view-title { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; }
+.view-sub   { color: var(--text2); font-size: 14px; margin-top: 2px; }
+
+.header-badge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--green-soft);
+  color: var(--green);
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.live-dot {
+  width: 8px; height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+/* ── Summary Cards ────────────────────────────────────────────────────────── */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.summary-card {
+  position: relative;
+  overflow: hidden;
+}
+.summary-card::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  right: -20px;
+  top: -20px;
+  opacity: 0.1;
+  background: currentColor;
+}
+.card-accent { border-left: 3px solid var(--accent); }
+.card-green  { border-left: 3px solid var(--green);  }
+.card-red    { border-left: 3px solid var(--red);    }
+.card-yellow { border-left: 3px solid var(--yellow); }
+
+.summary-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.summary-icon  { font-size: 20px; }
+.summary-label { font-size: 13px; font-weight: 600; color: var(--text2); }
+
+.summary-amount {
+  font-family: 'Sora', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+.summary-sub { font-size: 12px; color: var(--text3); }
+
+/* ── Charts ───────────────────────────────────────────────────────────────── */
+.charts-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.chart-card { padding: 24px; }
+.chart-header { margin-bottom: 20px; }
+.chart-header h3 { font-size: 16px; font-weight: 700; margin-bottom: 2px; }
+.chart-sub { font-size: 12px; color: var(--text3); }
+
+/* ── Recent Transactions ──────────────────────────────────────────────────── */
+.recent-card { padding: 24px; }
+.recent-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.recent-header h3 { font-size: 16px; font-weight: 700; margin-bottom: 2px; }
+
+.btn-sm { padding: 6px 14px !important; font-size: 13px !important; }
+
+.recent-list { display: flex; flex-direction: column; gap: 2px; }
+.recent-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 8px;
+  border-radius: var(--radius-sm);
+  transition: background 0.15s;
+}
+.recent-item:hover { background: var(--surface2); }
+
+.recent-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.tx-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.tx-dot.income  { background: var(--green); }
+.tx-dot.expense { background: var(--red);   }
+
+.tx-desc { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
+.tx-meta { font-size: 12px; color: var(--text3); }
+
+.tx-amount {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Sora', sans-serif;
+}
+.tx-amount.income  { color: var(--green); }
+.tx-amount.expense { color: var(--red);   }
+
+.empty-state {
+  text-align: center;
+  color: var(--text3);
+  padding: 40px;
+  font-size: 14px;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .charts-row   { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .summary-grid { grid-template-columns: 1fr; }
+  .view-header  { flex-direction: column; gap: 12px; }
+}

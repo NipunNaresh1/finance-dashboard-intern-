@@ -1,0 +1,56 @@
+/* ─── App Layout ─────────────────────────────────────────────────────────── */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.app-content {
+  flex: 1;
+  padding: 28px;
+  max-width: 1300px;
+  width: 100%;
+}
+
+/* Mobile top header */
+.mobile-header {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.mobile-logo {
+  font-family: 'Sora', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+}
+.hamburger {
+  border: none;
+  background: var(--surface2);
+  border-radius: 8px;
+  width: 38px;
+  height: 38px;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .mobile-header { display: flex; }
+  .app-content   { padding: 16px; }
+}

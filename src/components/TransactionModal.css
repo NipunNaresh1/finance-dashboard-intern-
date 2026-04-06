@@ -1,0 +1,76 @@
+/* ─── TransactionModal Styles ────────────────────────────────────────────── */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.modal-header h3 { font-size: 18px; font-weight: 700; }
+.modal-close {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--surface2);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+.modal-close:hover { background: var(--border); }
+
+/* ── Type Toggle ─────────────────────────────────────────────────────────── */
+.type-toggle {
+  display: flex;
+  background: var(--surface2);
+  border-radius: 8px;
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+.toggle-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text2);
+  transition: all 0.18s;
+}
+.toggle-btn.active-income  { background: var(--green-soft);  color: var(--green); }
+.toggle-btn.active-expense { background: var(--red-soft);    color: var(--red);   }
+
+/* ── Form Grid ───────────────────────────────────────────────────────────── */
+.modal-form { display: flex; flex-direction: column; gap: 0; }
+.form-grid  { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-size: 13px; font-weight: 600; color: var(--text2); }
+
+.form-error {
+  background: var(--red-soft);
+  color: var(--red);
+  font-size: 13px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  margin-top: 14px;
+  font-weight: 500;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+@media (max-width: 480px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .modal-box { margin: 16px; }
+}
